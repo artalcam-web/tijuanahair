@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://tijuanahair.com/</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Dr. Erik Yáñez -->
+  <url>
+    <loc>https://tijuanahair.com/dr-erik-yanez.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- FUE Hair Transplant Tijuana -->
+  <url>
+    <loc>https://tijuanahair.com/fue-hair-transplant-tijuana.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- DHI Hair Transplant Tijuana -->
+  <url>
+    <loc>https://tijuanahair.com/dhi-hair-transplant-tijuana.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Hair Transplant Cost Tijuana -->
+  <url>
+    <loc>https://tijuanahair.com/hair-transplant-cost-tijuana.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Hair Transplant Near San Diego -->
+  <url>
+    <loc>https://tijuanahair.com/san-diego-hair-transplant.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Before & After Results -->
+  <url>
+    <loc>https://tijuanahair.com/before-after-results.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Hair Transplant Guide San Diego / Tijuana -->
+  <url>
+    <loc>https://tijuanahair.com/hair-transplant-guide-san-diego.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Is It Safe to Get a Hair Transplant in Tijuana? -->
+  <url>
+    <loc>https://tijuanahair.com/tijuana-hair-transplant-safety.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
