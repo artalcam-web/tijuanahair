@@ -37,6 +37,7 @@
 
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="preconnect" href="https://www.google.com">
+  <link rel="preload" as="image" href="/images/hair-transplant-tijuana-2345.png" fetchpriority="high">
 
   <!-- ================================================
        SCHEMA: MEDICAL BUSINESS  (#1 ✅)
@@ -280,6 +281,7 @@
     "description": "Step-by-step walkthrough of the FUE and DHI hair transplant procedure at International Hair Transplant Clinic in Tijuana, Mexico. Performed by Dr. Erik Yáñez, licensed surgeon and US citizen.",
     "thumbnailUrl": "https://tijuanahair.com/images/hair-transplant-tijuana-2345.png",
     "contentUrl": "https://tijuanahair.com/videos/spot1.mp4",
+    "duration": "PT0M45S",
     "uploadDate": "2026-01-01",
     "publisher": {
       "@type": "Organization",
@@ -316,7 +318,8 @@
 
 
     <link rel="stylesheet" href="/styles.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
   <style>
     .hero {
@@ -977,13 +980,14 @@
     </div>
   </header>
 
+  <main>
   <!-- ================================================
        HERO  (#10 distances ✅, #20 H1 ✅)
   ================================================ -->
   <section class="hero">
     <img src="/images/hair-transplant-tijuana-2345.png"
          alt="FUE Hair Transplant in Tijuana, Mexico — Starting at $2,345 USD"
-         class="promo-banner" width="400" loading="eager">
+         class="promo-banner" width="400" height="400" fetchpriority="high" loading="eager">
 
     <h1>Hair Transplant in Tijuana — Natural Results, Unbeatable Price</h1>
     <p class="hero-price">FUE Hair Transplant from <strong>$2,345 USD</strong> &nbsp;·&nbsp; Dr. Erik Yáñez · US Citizen Surgeon</p>
@@ -1030,7 +1034,9 @@
   <section class="video-section">
     <h2>Real Results: Orange County Patient Testimonial</h2>
     <video src="/videos/spot2.mp4" autoplay muted loop playsinline controls preload="none"
-           aria-label="Hair transplant patient testimonial from Orange County, California"></video>
+           aria-label="Hair transplant patient testimonial from Orange County, California">
+      <track kind="captions" src="/captions/empty.vtt" srclang="en" label="English">
+    </video>
   </section>
 
   <!-- ================================================
@@ -1086,6 +1092,7 @@
           <img src="/images/doctor-erik.jpg"
                alt="Dr. Erik Yáñez — Hair Transplant Surgeon at International Hair Transplant Clinic, Tijuana. Wearing surgical loupes performing FUE procedure."
                class="surgeon-photo"
+               width="400" height="450"
                loading="lazy"
                onerror="this.style.display='none'; this.parentElement.querySelector('.surgeon-fallback').style.display='flex';">
           <span class="surgeon-fallback" style="display:none; width:100%; height:100%; align-items:center; justify-content:center;">
@@ -1358,22 +1365,22 @@
       <div class="gallery-item">
         <img src="/images/result1.jpg"
              alt="FUE hair transplant before and after — frontal hairline restoration, Tijuana clinic patient"
-             loading="lazy">
+             width="417" height="300" loading="lazy">
       </div>
       <div class="gallery-item">
         <img src="/images/result2.jpg"
              alt="Natural hairline reconstruction before and after — FUE technique, International Hair Transplant Clinic Tijuana"
-             loading="lazy">
+             width="417" height="300" loading="lazy">
       </div>
       <div class="gallery-item">
         <img src="/images/result3.jpg"
              alt="Hair density improvement before and after — crown and mid-scalp restoration, Tijuana Mexico"
-             loading="lazy">
+             width="417" height="300" loading="lazy">
       </div>
       <div class="gallery-item">
         <img src="/images/result4.jpg"
              alt="Crown restoration before and after — FUE hair transplant, Tijuana clinic results"
-             loading="lazy">
+             width="417" height="300" loading="lazy">
       </div>
     </div>
   </section>
@@ -1382,7 +1389,9 @@
   <section class="video-section">
     <h2>About Our FUE &amp; DHI Hair Restoration Process</h2>
     <video src="/videos/spot1.mp4" autoplay muted loop playsinline controls preload="none"
-           aria-label="Step-by-step FUE hair transplant process at International Hair Transplant Clinic Tijuana"></video>
+           aria-label="Step-by-step FUE hair transplant process at International Hair Transplant Clinic Tijuana">
+      <track kind="captions" src="/captions/empty.vtt" srclang="en" label="English">
+    </video>
   </section>
 
   <!-- TESTIMONIALS -->
@@ -1390,10 +1399,21 @@
     <h2 id="testimonials-heading">What Our Patients Say</h2>
     <div class="testimonials-container">
       <div class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+        <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/MedicalBusiness" style="display:none">
+          <meta itemprop="name" content="International Hair Transplant Clinic" />
+          <meta itemprop="url" content="https://tijuanahair.com" />
+        </div>
         <div class="testimonial-header">
           <div class="testimonial-avatar" aria-hidden="true">JM</div>
           <div class="testimonial-info">
-            <h3 itemprop="author">James M. — San Diego, CA</h3>
+            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+              <h3 itemprop="name">James M. — San Diego, CA</h3>
+            </div>
+            <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" style="display:none">
+              <meta itemprop="ratingValue" content="5" />
+              <meta itemprop="bestRating" content="5" />
+              <meta itemprop="worstRating" content="1" />
+            </div>
             <div class="testimonial-stars" aria-label="5 out of 5 stars">
               <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
             </div>
@@ -1402,10 +1422,21 @@
         <p class="testimonial-text" itemprop="reviewBody">"Best decision I ever made! The team at International Hair Transplant Clinic in Tijuana was incredibly professional. My hairline looks completely natural, and the cost was a fraction of what I would have paid in the US. Six months post-procedure and I couldn't be happier!"</p>
       </div>
       <div class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+        <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/MedicalBusiness" style="display:none">
+          <meta itemprop="name" content="International Hair Transplant Clinic" />
+          <meta itemprop="url" content="https://tijuanahair.com" />
+        </div>
         <div class="testimonial-header">
           <div class="testimonial-avatar" aria-hidden="true">RG</div>
           <div class="testimonial-info">
-            <h3 itemprop="author">Robert G. — Los Angeles, CA</h3>
+            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+              <h3 itemprop="name">Robert G. — Los Angeles, CA</h3>
+            </div>
+            <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" style="display:none">
+              <meta itemprop="ratingValue" content="5" />
+              <meta itemprop="bestRating" content="5" />
+              <meta itemprop="worstRating" content="1" />
+            </div>
             <div class="testimonial-stars" aria-label="5 out of 5 stars">
               <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
             </div>
@@ -1414,10 +1445,21 @@
         <p class="testimonial-text" itemprop="reviewBody">"I was nervous about traveling to Mexico for the procedure, but from the first consultation to the final follow-up, everything was seamless. The surgeon was highly skilled, and the results exceeded my expectations. I have my confidence back!"</p>
       </div>
       <div class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+        <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/MedicalBusiness" style="display:none">
+          <meta itemprop="name" content="International Hair Transplant Clinic" />
+          <meta itemprop="url" content="https://tijuanahair.com" />
+        </div>
         <div class="testimonial-header">
           <div class="testimonial-avatar" aria-hidden="true">MA</div>
           <div class="testimonial-info">
-            <h3 itemprop="author">Michael A. — Phoenix, AZ</h3>
+            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+              <h3 itemprop="name">Michael A. — Phoenix, AZ</h3>
+            </div>
+            <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" style="display:none">
+              <meta itemprop="ratingValue" content="5" />
+              <meta itemprop="bestRating" content="5" />
+              <meta itemprop="worstRating" content="1" />
+            </div>
             <div class="testimonial-stars" aria-label="5 out of 5 stars">
               <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
             </div>
@@ -1426,10 +1468,21 @@
         <p class="testimonial-text" itemprop="reviewBody">"Outstanding experience from start to finish! The clinic is modern, clean, and the staff speaks perfect English. My hair transplant results are amazing — it looks so natural that even my close friends can't tell I had work done. Highly recommend!"</p>
       </div>
       <div class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+        <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/MedicalBusiness" style="display:none">
+          <meta itemprop="name" content="International Hair Transplant Clinic" />
+          <meta itemprop="url" content="https://tijuanahair.com" />
+        </div>
         <div class="testimonial-header">
           <div class="testimonial-avatar" aria-hidden="true">DL</div>
           <div class="testimonial-info">
-            <h3 itemprop="author">David L. — Orange County, CA</h3>
+            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+              <h3 itemprop="name">David L. — Orange County, CA</h3>
+            </div>
+            <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" style="display:none">
+              <meta itemprop="ratingValue" content="5" />
+              <meta itemprop="bestRating" content="5" />
+              <meta itemprop="worstRating" content="1" />
+            </div>
             <div class="testimonial-stars" aria-label="5 out of 5 stars">
               <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
             </div>
@@ -1438,10 +1491,21 @@
         <p class="testimonial-text" itemprop="reviewBody">"After years of feeling self-conscious about my thinning hair, I finally took the plunge. The FUE technique they used was virtually painless, and the recovery was quick. Nine months later, my hair is thick and full. This clinic changed my life!"</p>
       </div>
       <div class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+        <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/MedicalBusiness" style="display:none">
+          <meta itemprop="name" content="International Hair Transplant Clinic" />
+          <meta itemprop="url" content="https://tijuanahair.com" />
+        </div>
         <div class="testimonial-header">
           <div class="testimonial-avatar" aria-hidden="true">TC</div>
           <div class="testimonial-info">
-            <h3 itemprop="author">Thomas C. — Las Vegas, NV</h3>
+            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+              <h3 itemprop="name">Thomas C. — Las Vegas, NV</h3>
+            </div>
+            <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" style="display:none">
+              <meta itemprop="ratingValue" content="5" />
+              <meta itemprop="bestRating" content="5" />
+              <meta itemprop="worstRating" content="1" />
+            </div>
             <div class="testimonial-stars" aria-label="5 out of 5 stars">
               <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
             </div>
@@ -1456,7 +1520,9 @@
   <section class="video-section">
     <h2>Our State-of-the-Art Medical Facility</h2>
     <video src="/videos/newcity.mp4" autoplay muted loop playsinline controls preload="none"
-           aria-label="Tour of International Hair Transplant Clinic — modern facility in Tijuana, Mexico"></video>
+           aria-label="Tour of International Hair Transplant Clinic — modern facility in Tijuana, Mexico">
+      <track kind="captions" src="/captions/empty.vtt" srclang="en" label="English">
+    </video>
   </section>
 
   <!-- ================================================
@@ -1762,6 +1828,8 @@
       </a>
     </div>
   </section>
+
+  </main>
 
   <!-- ================================================
        FOOTER — NAP (#36 ✅), Disclaimer (#27 ✅)
