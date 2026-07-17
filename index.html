@@ -37,7 +37,6 @@
 
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="preconnect" href="https://www.google.com">
-  <link rel="preload" as="image" href="/images/hair-transplant-tijuana-2345.png" fetchpriority="high">
 
   <!-- ================================================
        SCHEMA: MEDICAL BUSINESS  (#1 ✅)
@@ -281,7 +280,6 @@
     "description": "Step-by-step walkthrough of the FUE and DHI hair transplant procedure at International Hair Transplant Clinic in Tijuana, Mexico. Performed by Dr. Erik Yáñez, licensed surgeon and US citizen.",
     "thumbnailUrl": "https://tijuanahair.com/images/hair-transplant-tijuana-2345.png",
     "contentUrl": "https://tijuanahair.com/videos/spot1.mp4",
-    "duration": "PT0M45S",
     "uploadDate": "2026-01-01",
     "publisher": {
       "@type": "Organization",
@@ -318,8 +316,7 @@
 
 
     <link rel="stylesheet" href="/styles.css">
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     .hero {
@@ -960,6 +957,22 @@
 </head>
 <body>
 
+  <!-- STICKY WHATSAPP BUTTON — placed first so it renders/is clickable
+       immediately, before any other script on the page runs (#FIX idle) -->
+  <a href="https://wa.me/5216646423088?text=Hi!%20I%20found%20IHTC%20Tijuana%20online%20and%20I%27d%20like%20a%20free%20hair%20transplant%20consultation." class="sticky-wa js-wa-link" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="Chat with us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- MOBILE STICKY BOTTOM BAR -->
+  <div class="mobile-cta-bar">
+    <a href="https://wa.me/5216646423088?text=Hi!%20I%20found%20IHTC%20Tijuana%20online%20and%20I%27d%20like%20a%20free%20hair%20transplant%20consultation." class="mob-wa js-wa-link" target="_blank" rel="noopener">
+      <i class="fab fa-whatsapp"></i> WhatsApp Us
+    </a>
+    <a href="tel:+526646423088" class="mob-call">
+      <i class="fas fa-phone"></i> Call Now
+    </a>
+  </div>
+
   <!-- ================================================
        HEADER — NAP visible (#36 ✅)
   ================================================ -->
@@ -974,20 +987,19 @@
       <a href="tel:+526646423088" class="header-phone">
         <i class="fas fa-phone"></i> +52 664 642 3088
       </a>
-      <a href="https://wa.me/526646423088" class="btn whatsapp" target="_blank" rel="noopener" style="padding:10px 16px; font-size:0.9rem;" onclick="fbq('track', 'Lead')">
+      <a href="https://wa.me/5216646423088" class="btn whatsapp" target="_blank" rel="noopener" style="padding:10px 16px; font-size:0.9rem;" onclick="fbq('track', 'Lead')">
         <i class="fab fa-whatsapp"></i> WhatsApp
       </a>
     </div>
   </header>
 
-  <main>
   <!-- ================================================
        HERO  (#10 distances ✅, #20 H1 ✅)
   ================================================ -->
   <section class="hero">
     <img src="/images/hair-transplant-tijuana-2345.png"
          alt="FUE Hair Transplant in Tijuana, Mexico — Starting at $2,345 USD"
-         class="promo-banner" width="400" height="400" fetchpriority="high" loading="eager">
+         class="promo-banner" width="400" loading="eager">
 
     <h1>Hair Transplant in Tijuana — Natural Results, Unbeatable Price</h1>
     <p class="hero-price">FUE Hair Transplant from <strong>$2,345 USD</strong> &nbsp;·&nbsp; Dr. Erik Yáñez · US Citizen Surgeon</p>
@@ -1010,7 +1022,7 @@
     <p>At International Hair Transplant Clinic in Tijuana, Mexico — just 5 minutes from the San Ysidro border — our licensed medical specialists specialize in FUE and DHI hair transplant. Natural, permanent hair restoration at 70% less than US prices, with a fully English-speaking team.</p>
 
     <div class="contact-buttons">
-      <a href="https://wa.me/526646423088?text=Hi!%20I'm%20interested%20in%20a%20hair%20transplant..."
+      <a href="https://wa.me/5216646423088?text=Hi!%20I'm%20interested%20in%20a%20hair%20transplant..."
          class="btn whatsapp" target="_blank" rel="noopener noreferrer"
          aria-label="Contact us on WhatsApp" onclick="fbq('track', 'Lead')">
         <i class="fab fa-whatsapp"></i> WhatsApp
@@ -1033,10 +1045,8 @@
   <!-- VIDEO: Patient Testimonial -->
   <section class="video-section">
     <h2>Real Results: Orange County Patient Testimonial</h2>
-    <video src="/videos/spot2.mp4" autoplay muted loop playsinline controls preload="none"
-           aria-label="Hair transplant patient testimonial from Orange County, California">
-      <track kind="captions" src="/captions/empty.vtt" srclang="en" label="English">
-    </video>
+    <video src="/videos/spot2.mp4" muted loop playsinline controls preload="none" class="lazy-autoplay-video"
+           aria-label="Hair transplant patient testimonial from Orange County, California"></video>
   </section>
 
   <!-- ================================================
@@ -1092,7 +1102,6 @@
           <img src="/images/doctor-erik.jpg"
                alt="Dr. Erik Yáñez — Hair Transplant Surgeon at International Hair Transplant Clinic, Tijuana. Wearing surgical loupes performing FUE procedure."
                class="surgeon-photo"
-               width="400" height="450"
                loading="lazy"
                onerror="this.style.display='none'; this.parentElement.querySelector('.surgeon-fallback').style.display='flex';">
           <span class="surgeon-fallback" style="display:none; width:100%; height:100%; align-items:center; justify-content:center;">
@@ -1344,7 +1353,7 @@
         Prefer to reach us right now? We're a WhatsApp message away:
       </p>
       <div class="success-actions">
-        <a href="https://wa.me/526646423088" target="_blank" rel="noopener" class="btn-success-wa" onclick="fbq('track', 'Lead')">
+        <a href="https://wa.me/5216646423088" target="_blank" rel="noopener" class="btn-success-wa" onclick="fbq('track', 'Lead')">
           <i class="fab fa-whatsapp"></i> WhatsApp Us Now
         </a>
         <a href="tel:+526646423088" class="btn-success-call">
@@ -1365,22 +1374,22 @@
       <div class="gallery-item">
         <img src="/images/result1.jpg"
              alt="FUE hair transplant before and after — frontal hairline restoration, Tijuana clinic patient"
-             width="417" height="300" loading="lazy">
+             loading="lazy">
       </div>
       <div class="gallery-item">
         <img src="/images/result2.jpg"
              alt="Natural hairline reconstruction before and after — FUE technique, International Hair Transplant Clinic Tijuana"
-             width="417" height="300" loading="lazy">
+             loading="lazy">
       </div>
       <div class="gallery-item">
         <img src="/images/result3.jpg"
              alt="Hair density improvement before and after — crown and mid-scalp restoration, Tijuana Mexico"
-             width="417" height="300" loading="lazy">
+             loading="lazy">
       </div>
       <div class="gallery-item">
         <img src="/images/result4.jpg"
              alt="Crown restoration before and after — FUE hair transplant, Tijuana clinic results"
-             width="417" height="300" loading="lazy">
+             loading="lazy">
       </div>
     </div>
   </section>
@@ -1388,10 +1397,8 @@
   <!-- VIDEO: Process -->
   <section class="video-section">
     <h2>About Our FUE &amp; DHI Hair Restoration Process</h2>
-    <video src="/videos/spot1.mp4" autoplay muted loop playsinline controls preload="none"
-           aria-label="Step-by-step FUE hair transplant process at International Hair Transplant Clinic Tijuana">
-      <track kind="captions" src="/captions/empty.vtt" srclang="en" label="English">
-    </video>
+    <video src="/videos/spot1.mp4" muted loop playsinline controls preload="none" class="lazy-autoplay-video"
+           aria-label="Step-by-step FUE hair transplant process at International Hair Transplant Clinic Tijuana"></video>
   </section>
 
   <!-- TESTIMONIALS -->
@@ -1399,21 +1406,10 @@
     <h2 id="testimonials-heading">What Our Patients Say</h2>
     <div class="testimonials-container">
       <div class="testimonial-card" itemscope itemtype="https://schema.org/Review">
-        <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/MedicalBusiness" style="display:none">
-          <meta itemprop="name" content="International Hair Transplant Clinic" />
-          <meta itemprop="url" content="https://tijuanahair.com" />
-        </div>
         <div class="testimonial-header">
           <div class="testimonial-avatar" aria-hidden="true">JM</div>
           <div class="testimonial-info">
-            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <h3 itemprop="name">James M. — San Diego, CA</h3>
-            </div>
-            <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" style="display:none">
-              <meta itemprop="ratingValue" content="5" />
-              <meta itemprop="bestRating" content="5" />
-              <meta itemprop="worstRating" content="1" />
-            </div>
+            <h3 itemprop="author">James M. — San Diego, CA</h3>
             <div class="testimonial-stars" aria-label="5 out of 5 stars">
               <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
             </div>
@@ -1422,21 +1418,10 @@
         <p class="testimonial-text" itemprop="reviewBody">"Best decision I ever made! The team at International Hair Transplant Clinic in Tijuana was incredibly professional. My hairline looks completely natural, and the cost was a fraction of what I would have paid in the US. Six months post-procedure and I couldn't be happier!"</p>
       </div>
       <div class="testimonial-card" itemscope itemtype="https://schema.org/Review">
-        <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/MedicalBusiness" style="display:none">
-          <meta itemprop="name" content="International Hair Transplant Clinic" />
-          <meta itemprop="url" content="https://tijuanahair.com" />
-        </div>
         <div class="testimonial-header">
           <div class="testimonial-avatar" aria-hidden="true">RG</div>
           <div class="testimonial-info">
-            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <h3 itemprop="name">Robert G. — Los Angeles, CA</h3>
-            </div>
-            <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" style="display:none">
-              <meta itemprop="ratingValue" content="5" />
-              <meta itemprop="bestRating" content="5" />
-              <meta itemprop="worstRating" content="1" />
-            </div>
+            <h3 itemprop="author">Robert G. — Los Angeles, CA</h3>
             <div class="testimonial-stars" aria-label="5 out of 5 stars">
               <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
             </div>
@@ -1445,21 +1430,10 @@
         <p class="testimonial-text" itemprop="reviewBody">"I was nervous about traveling to Mexico for the procedure, but from the first consultation to the final follow-up, everything was seamless. The surgeon was highly skilled, and the results exceeded my expectations. I have my confidence back!"</p>
       </div>
       <div class="testimonial-card" itemscope itemtype="https://schema.org/Review">
-        <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/MedicalBusiness" style="display:none">
-          <meta itemprop="name" content="International Hair Transplant Clinic" />
-          <meta itemprop="url" content="https://tijuanahair.com" />
-        </div>
         <div class="testimonial-header">
           <div class="testimonial-avatar" aria-hidden="true">MA</div>
           <div class="testimonial-info">
-            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <h3 itemprop="name">Michael A. — Phoenix, AZ</h3>
-            </div>
-            <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" style="display:none">
-              <meta itemprop="ratingValue" content="5" />
-              <meta itemprop="bestRating" content="5" />
-              <meta itemprop="worstRating" content="1" />
-            </div>
+            <h3 itemprop="author">Michael A. — Phoenix, AZ</h3>
             <div class="testimonial-stars" aria-label="5 out of 5 stars">
               <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
             </div>
@@ -1468,21 +1442,10 @@
         <p class="testimonial-text" itemprop="reviewBody">"Outstanding experience from start to finish! The clinic is modern, clean, and the staff speaks perfect English. My hair transplant results are amazing — it looks so natural that even my close friends can't tell I had work done. Highly recommend!"</p>
       </div>
       <div class="testimonial-card" itemscope itemtype="https://schema.org/Review">
-        <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/MedicalBusiness" style="display:none">
-          <meta itemprop="name" content="International Hair Transplant Clinic" />
-          <meta itemprop="url" content="https://tijuanahair.com" />
-        </div>
         <div class="testimonial-header">
           <div class="testimonial-avatar" aria-hidden="true">DL</div>
           <div class="testimonial-info">
-            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <h3 itemprop="name">David L. — Orange County, CA</h3>
-            </div>
-            <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" style="display:none">
-              <meta itemprop="ratingValue" content="5" />
-              <meta itemprop="bestRating" content="5" />
-              <meta itemprop="worstRating" content="1" />
-            </div>
+            <h3 itemprop="author">David L. — Orange County, CA</h3>
             <div class="testimonial-stars" aria-label="5 out of 5 stars">
               <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
             </div>
@@ -1491,21 +1454,10 @@
         <p class="testimonial-text" itemprop="reviewBody">"After years of feeling self-conscious about my thinning hair, I finally took the plunge. The FUE technique they used was virtually painless, and the recovery was quick. Nine months later, my hair is thick and full. This clinic changed my life!"</p>
       </div>
       <div class="testimonial-card" itemscope itemtype="https://schema.org/Review">
-        <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/MedicalBusiness" style="display:none">
-          <meta itemprop="name" content="International Hair Transplant Clinic" />
-          <meta itemprop="url" content="https://tijuanahair.com" />
-        </div>
         <div class="testimonial-header">
           <div class="testimonial-avatar" aria-hidden="true">TC</div>
           <div class="testimonial-info">
-            <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <h3 itemprop="name">Thomas C. — Las Vegas, NV</h3>
-            </div>
-            <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" style="display:none">
-              <meta itemprop="ratingValue" content="5" />
-              <meta itemprop="bestRating" content="5" />
-              <meta itemprop="worstRating" content="1" />
-            </div>
+            <h3 itemprop="author">Thomas C. — Las Vegas, NV</h3>
             <div class="testimonial-stars" aria-label="5 out of 5 stars">
               <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
             </div>
@@ -1519,10 +1471,8 @@
   <!-- VIDEO: Facility -->
   <section class="video-section">
     <h2>Our State-of-the-Art Medical Facility</h2>
-    <video src="/videos/newcity.mp4" autoplay muted loop playsinline controls preload="none"
-           aria-label="Tour of International Hair Transplant Clinic — modern facility in Tijuana, Mexico">
-      <track kind="captions" src="/captions/empty.vtt" srclang="en" label="English">
-    </video>
+    <video src="/videos/newcity.mp4" muted loop playsinline controls preload="none" class="lazy-autoplay-video"
+           aria-label="Tour of International Hair Transplant Clinic — modern facility in Tijuana, Mexico"></video>
   </section>
 
   <!-- ================================================
@@ -1811,7 +1761,7 @@
     </div>
 
     <div class="contact-buttons">
-      <a href="https://wa.me/526646423088?text=Hi!%20I'm%20interested%20in%20a%20hair%20transplant..."
+      <a href="https://wa.me/5216646423088?text=Hi!%20I'm%20interested%20in%20a%20hair%20transplant..."
          class="btn whatsapp" target="_blank" rel="noopener noreferrer" onclick="fbq('track', 'Lead')">
         <i class="fab fa-whatsapp"></i> WhatsApp
       </a>
@@ -1829,8 +1779,6 @@
     </div>
   </section>
 
-  </main>
-
   <!-- ================================================
        FOOTER — NAP (#36 ✅), Disclaimer (#27 ✅)
   ================================================ -->
@@ -1841,7 +1789,7 @@
         <h4>International Hair Transplant Clinic</h4>
         <p><i class="fas fa-map-marker-alt"></i> New City Medical Plaza · Paseo del Centenario 9580, Zona Río, Tijuana, B.C.</p>
         <p><i class="fas fa-phone"></i> <a href="tel:+526646423088">+52 664 642 3088</a></p>
-        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/526646423088" target="_blank" rel="noopener">WhatsApp Chat</a></p>
+        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/5216646423088" target="_blank" rel="noopener">WhatsApp Chat</a></p>
         <p><i class="fas fa-globe"></i> <a href="https://tijuanahair.com">tijuanahair.com</a></p>
         <p><i class="fas fa-clock"></i> Mon–Fri 9am–6pm · Sat 9am–2pm</p>
       </div>
@@ -1876,11 +1824,11 @@
     </div>
   </footer>
 
-  <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database-compat.js"></script>
+  <!-- Firebase SDK — deferred so it never blocks HTML parsing/rendering -->
+  <script defer src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database-compat.js"></script>
 
-  <script>
+  <script defer>
     // ════════════════════════════════════════════════════════════════
     // ⚠️  FIREBASE CONFIG
     // Paste your Firebase project values here.
@@ -1909,15 +1857,28 @@
       { value:'17:00', label:'5:00 PM'  }
     ];
 
-    // ── Firebase init (graceful — works without config too) ──────────
+    // ── Firebase init — LAZY on purpose ───────────────────────────────
+    // Firebase Realtime Database opens a persistent WebSocket connection
+    // the moment firebase.database() is called, and that connection stays
+    // open for as long as the tab is open. Initializing it automatically
+    // on every page load meant EVERY visitor — including the ~99% who only
+    // came to tap WhatsApp — opened a live DB connection that never idles.
+    // That's what was keeping the page "busy" for 60+ seconds.
+    // Now it only connects the first time someone actually touches the
+    // date picker (the one feature that needs it).
     var db = null;
-    (function initFirebase() {
-      if (!FIREBASE_CONFIG.apiKey || FIREBASE_CONFIG.apiKey === 'YOUR_FIREBASE_API_KEY') return;
+    var firebaseInitTried = false;
+    function ensureFirebase() {
+      if (db || firebaseInitTried) return db;
+      firebaseInitTried = true;
+      if (!FIREBASE_CONFIG.apiKey || FIREBASE_CONFIG.apiKey === 'YOUR_FIREBASE_API_KEY') return null;
       try {
+        if (typeof firebase === 'undefined') return null; // SDK still loading — render() below falls back gracefully
         firebase.initializeApp(FIREBASE_CONFIG);
         db = firebase.database();
       } catch(e) { console.warn('Firebase init:', e.message); }
-    })();
+      return db;
+    }
 
     // ── Set min date to today, wire date change ──────────────────────
     (function setupDate() {
@@ -1951,6 +1912,7 @@
       var timeEl = document.getElementById('preferredTime');
       timeEl.innerHTML = '<option value="">Checking availability…</option>';
       timeEl.disabled  = true;
+      var db = ensureFirebase();
 
       function render(blocked) {
         timeEl.innerHTML = '<option value="">-- Select a time --</option>';
@@ -1996,10 +1958,11 @@
 
         if (json.success) {
           // Block the slot in Firebase so it doesn't get double-booked
-          var bDate = formData.get('preferredDate');
-          var bTime = formData.get('preferredTime');
-          if (db && bDate && bTime) {
-            db.ref('ihtc/slots/' + bDate + '/' + bTime).set('web').catch(function(){});
+          var bDate    = formData.get('preferredDate');
+          var bTime    = formData.get('preferredTime');
+          var slotDb   = ensureFirebase();
+          if (slotDb && bDate && bTime) {
+            slotDb.ref('ihtc/slots/' + bDate + '/' + bTime).set('web').catch(function(){});
           }
 
           // Build confirmation card
@@ -2039,7 +2002,7 @@
       } catch(err) {
         btn.disabled = false; btn.classList.remove('loading');
         btn.querySelector('.btn-label').innerHTML = '<i class="fas fa-calendar-check"></i> Request My Free Consultation';
-        alert('Could not send — check your connection and try again, or WhatsApp us: wa.me/526646423088');
+        alert('Could not send — check your connection and try again, or WhatsApp us: wa.me/5216646423088');
       }
     });
 
@@ -2057,21 +2020,48 @@
     });
   </script>
 
+  <!-- Lightweight, independent script (no Firebase/defer dependency) so the
+       WhatsApp buttons stay clickable and testimonials only start
+       downloading/playing once actually scrolled into view. -->
+  <script>
+    // ── LAZY-PLAY TESTIMONIAL VIDEOS ──────────────────────────────────
+    // Previously all 3 videos had `autoplay`, so all 3 started buffering
+    // and looping simultaneously on page load — continuous background
+    // network/decode activity that kept the page from ever going idle.
+    // Now each video only loads+plays while it's actually on screen.
+    (function lazyPlayVideos() {
+      var videos = document.querySelectorAll('.lazy-autoplay-video');
+      if (!videos.length) return;
+      if (!('IntersectionObserver' in window)) {
+        videos.forEach(function(v){ v.play().catch(function(){}); });
+        return;
+      }
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) entry.target.play().catch(function(){});
+          else entry.target.pause();
+        });
+      }, { threshold: 0.4 });
+      videos.forEach(function(v){ io.observe(v); });
+    })();
 
-  <!-- STICKY WHATSAPP BUTTON -->
-  <a href="https://wa.me/526646423088?text=Hi!%20I%20found%20IHTC%20Tijuana%20online%20and%20I%27d%20like%20a%20free%20hair%20transplant%20consultation." class="sticky-wa" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="Chat with us on WhatsApp" onclick="fbq('track', 'Lead')">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <!-- MOBILE STICKY BOTTOM BAR -->
-  <div class="mobile-cta-bar">
-    <a href="https://wa.me/526646423088?text=Hi!%20I%20found%20IHTC%20Tijuana%20online%20and%20I%27d%20like%20a%20free%20hair%20transplant%20consultation." class="mob-wa" target="_blank" rel="noopener" onclick="fbq('track', 'Lead')">
-      <i class="fab fa-whatsapp"></i> WhatsApp Us
-    </a>
-    <a href="tel:+526646423088" class="mob-call">
-      <i class="fas fa-phone"></i> Call Now
-    </a>
-  </div>
+    // ── META PIXEL: track real WhatsApp clicks ────────────────────────
+    // The Pixel was only firing the default PageView, so there was no way
+    // to measure how many ad clicks actually turned into a WhatsApp chat.
+    // This fires a "Contact" event (Meta's standard event for click-to-chat
+    // / click-to-call actions) every time any WhatsApp link on the page is
+    // clicked, and does the same to GA4 for consistency.
+    document.querySelectorAll('a[href*="wa.me"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (typeof fbq === 'function') {
+          fbq('track', 'Contact', { content_name: 'whatsapp_click', content_category: this.className || 'whatsapp_link' });
+        }
+        if (typeof gtag === 'function') {
+          gtag('event', 'contact', { method: 'whatsapp' });
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>

@@ -280,7 +280,7 @@
       <a href="tel:+526646423088" class="header-phone">
         <i class="fas fa-phone"></i> +52 664 642 3088
       </a>
-      <a href="https://wa.me/526646423088" class="btn whatsapp" target="_blank" rel="noopener" style="padding:10px 16px; font-size:0.9rem;">
+      <a href="https://wa.me/5216646423088" class="btn whatsapp" target="_blank" rel="noopener" style="padding:10px 16px; font-size:0.9rem;">
         <i class="fab fa-whatsapp"></i> WhatsApp
       </a>
     </div>
@@ -296,7 +296,7 @@
     <h1>Complete Guide: Hair Transplant from San Diego to Tijuana (2026)</h1>
     <p class="guide-subtitle">Everything you need to know before crossing the border for your FUE procedure — costs, safety, logistics, what to expect, and how to choose the right clinic.</p>
     <div class="contact-buttons">
-      <a href="https://wa.me/526646423088" class="btn whatsapp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask a Question</a>
+      <a href="https://wa.me/5216646423088" class="btn whatsapp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Ask a Question</a>
       <a href="/#book-appointment" class="btn call"><i class="fas fa-calendar-check"></i> Free Consultation</a>
     </div>
   </section>
@@ -578,7 +578,7 @@
         <h4>International Hair Transplant Clinic</h4>
         <p><i class="fas fa-map-marker-alt"></i> New City Medical Plaza · Paseo del Centenario 9580, Zona Río, Tijuana, B.C.</p>
         <p><i class="fas fa-phone"></i> <a href="tel:+526646423088">+52 664 642 3088</a></p>
-        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/526646423088">WhatsApp</a></p>
+        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/5216646423088">WhatsApp</a></p>
       </div>
       <div class="footer-col">
         <h4>Procedures</h4>
@@ -603,6 +603,20 @@
       <p>&copy; 2026 International Hair Transplant Clinic — tijuanahair.com</p>
     </div>
   </footer>
+
+  <!-- META PIXEL: track WhatsApp clicks as "Contact" (added by audit) -->
+  <script>
+    document.querySelectorAll('a[href*="wa.me"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (typeof fbq === 'function') {
+          fbq('track', 'Contact', { content_name: 'whatsapp_click', content_category: this.className || 'whatsapp_link' });
+        }
+        if (typeof gtag === 'function') {
+          gtag('event', 'contact', { method: 'whatsapp' });
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>

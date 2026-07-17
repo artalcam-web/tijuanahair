@@ -701,7 +701,7 @@
   <p>New City Medical Plaza · Paseo del Centenario 9580, Zona Río, Tijuana, B.C., México</p>
   <p>
     <a href="tel:+16192882083">+1 (619) 288-2083</a> ·
-    <a href="https://wa.me/526641234567">WhatsApp</a> ·
+    <a href="https://wa.me/5216646423088">WhatsApp</a> ·
     <a href="mailto:info@tijuanahair.com">info@tijuanahair.com</a>
   </p>
   <p style="margin-top:12px;">© 2026 tijuanahair.com · All rights reserved</p>
@@ -709,6 +709,20 @@
     This page is for informational purposes only and does not constitute medical advice. Results vary by patient. Consult a qualified physician before any surgical procedure.
   </p>
 </footer>
+
+  <!-- META PIXEL: track WhatsApp clicks as "Contact" (added by audit) -->
+  <script>
+    document.querySelectorAll('a[href*="wa.me"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (typeof fbq === 'function') {
+          fbq('track', 'Contact', { content_name: 'whatsapp_click', content_category: this.className || 'whatsapp_link' });
+        }
+        if (typeof gtag === 'function') {
+          gtag('event', 'contact', { method: 'whatsapp' });
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
