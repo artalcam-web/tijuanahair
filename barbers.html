@@ -1,920 +1,851 @@
-<title>IHTC Barbers Promo</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hair Transplant Special — $2,990 | IHTC Tijuana</title>
+  <meta name="description" content="Exclusive barbershop special: hair transplant starting at $2,990 — maximum extraction. IHTC Tijuana. Real results, real patients. WhatsApp us today.">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<style>
-  /* ─── Design tokens ──────────────────────────────────────────────
-     Layout: full-bleed hero → price callout → trust row → CTA band
-     Color: deep teal base, gold accent, cream text
-     Type: Barlow Condensed (display/price) + Barlow (body)
-  ─────────────────────────────────────────────────────────────────── */
-  :root {
-    --navy:    #0d2530;
-    --teal:    #163848;
-    --teal2:   #1e4d63;
-    --gold:    #c4a24a;
-    --gold2:   #e8c56a;
-    --cream:   #f5f0e8;
-    --white:   #ffffff;
-    --muted:   #8fa8b5;
-    --bg:      #0d2530;
-    --card-bg: #163848;
-    --fg:      #f5f0e8;
-    color-scheme: dark;
-  }
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SP8DL56H5E"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SP8DL56H5E');
+  </script>
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <!-- Facebook Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1415197632010498');fbq('track','PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1415197632010498&ev=PageView&noscript=1"/></noscript>
 
-  body {
-    font-family: 'Barlow', system-ui, sans-serif;
-    background: var(--bg);
-    color: var(--fg);
-    line-height: 1.5;
-    padding-left: max(16px, env(safe-area-inset-left, 0px));
-    padding-right: max(16px, env(safe-area-inset-right, 0px));
-  }
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  /* ─── NAV ─────────────────────────────────────────────────────── */
-  .nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-block: 18px;
-    padding-left: max(24px, env(safe-area-inset-left, 0px));
-    padding-right: max(24px, env(safe-area-inset-right, 0px));
-    background: var(--navy);
-    border-bottom: 1px solid rgba(196,162,74,.2);
-  }
-  .nav-logo {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 800;
-    font-size: 1.1rem;
-    letter-spacing: .03em;
-    color: var(--white);
-    line-height: 1.15;
-  }
-  .nav-logo span { color: var(--gold); }
-  .nav-sub {
-    font-size: .65rem;
-    font-weight: 600;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .nav-wa {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    background: #25d366;
-    color: #fff;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: .85rem;
-    letter-spacing: .04em;
-    text-decoration: none;
-    padding: 8px 14px;
-    border-radius: 6px;
-    white-space: nowrap;
-  }
-  .nav-wa svg { flex-shrink: 0; }
+    :root {
+      --blue: #006BFF;
+      --cyan: #0AE8F0;
+      --dark: #0f172a;
+      --gray: #64748b;
+      --light: #f8fafc;
+      --white: #ffffff;
+      --green: #25D366;
+      --radius: 16px;
+    }
 
-  /* ─── HERO ────────────────────────────────────────────────────── */
-  .hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    min-height: 540px;
-  }
-  .hero-img {
-    position: relative;
-    overflow: hidden;
-    min-height: 400px;
-  }
-  .hero-img canvas {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-  .hero-img::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, transparent 60%, var(--bg) 100%),
-                linear-gradient(0deg, var(--bg) 0%, transparent 20%);
-  }
-  /* scissors watermark */
-  .hero-img .stamp {
-    position: absolute;
-    bottom: 24px;
-    left: 20px;
-    z-index: 2;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: .7rem;
-    font-weight: 600;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,.45);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--white);
+      color: var(--dark);
+      line-height: 1.6;
+    }
 
-  .hero-copy {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 48px 40px 48px 32px;
-    background: var(--bg);
-  }
-  .hero-eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: .8rem;
-    font-weight: 700;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 20px;
-  }
-  .hero-eyebrow::before {
-    content: '';
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--gold);
-    flex-shrink: 0;
-  }
-  .hero-headline {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: clamp(2.4rem, 5vw, 3.8rem);
-    font-weight: 900;
-    line-height: 1.0;
-    text-wrap: balance;
-    color: var(--white);
-    margin-bottom: 12px;
-  }
-  .hero-headline em {
-    font-style: normal;
-    color: var(--gold);
-  }
-  .hero-sub {
-    font-size: 1rem;
-    color: var(--muted);
-    max-width: 38ch;
-    margin-bottom: 36px;
-    line-height: 1.6;
-  }
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #0a0a0a;
+    }
 
-  /* price card */
-  .price-card {
-    background: var(--card-bg);
-    border: 1px solid rgba(196,162,74,.3);
-    border-radius: 10px;
-    padding: 22px 24px;
-    margin-bottom: 28px;
-    position: relative;
-    overflow: hidden;
-  }
-  .price-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--gold), var(--gold2));
-  }
-  .price-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: .75rem;
-    font-weight: 700;
-    letter-spacing: .13em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 6px;
-  }
-  .price-amount {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 3.4rem;
-    font-weight: 900;
-    line-height: 1;
-    color: var(--white);
-    font-variant-numeric: tabular-nums;
-    margin-bottom: 4px;
-  }
-  .price-amount sup {
-    font-size: 1.5rem;
-    font-weight: 700;
-    vertical-align: super;
-    margin-right: 2px;
-  }
-  .price-note {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: .8rem;
-    font-weight: 600;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .price-vs {
-    margin-top: 10px;
-    font-size: .82rem;
-    color: var(--muted);
-  }
-  .price-vs strong { color: var(--gold2); }
+    .hero-split {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
 
-  .cta-row {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  .btn-primary {
-    flex: 1 1 auto;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background: var(--gold);
-    color: var(--navy);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 800;
-    font-size: 1rem;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 13px 22px;
-    border-radius: 7px;
-    cursor: pointer;
-    border: none;
-    transition: background .15s;
-  }
-  .btn-primary:hover { background: var(--gold2); }
-  .btn-ghost {
-    flex: 1 1 auto;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background: transparent;
-    color: var(--cream);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 13px 22px;
-    border-radius: 7px;
-    border: 1.5px solid rgba(196,162,74,.4);
-    transition: border-color .15s;
-  }
-  .btn-ghost:hover { border-color: var(--gold); }
+    .hero-before,
+    .hero-after {
+      position: relative;
+      overflow: hidden;
+    }
 
-  /* ─── STRIP ───────────────────────────────────────────────────── */
-  .strip {
-    background: var(--teal);
-    border-top: 1px solid rgba(196,162,74,.15);
-    border-bottom: 1px solid rgba(196,162,74,.15);
-  }
-  .strip-inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0;
-    padding-block: 0;
-    padding-left: max(0px, env(safe-area-inset-left, 0px));
-    padding-right: max(0px, env(safe-area-inset-right, 0px));
-  }
-  .strip-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 16px 32px;
-    border-right: 1px solid rgba(255,255,255,.1);
-  }
-  .strip-item:last-child { border-right: none; }
-  .strip-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: rgba(196,162,74,.15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    color: var(--gold);
-  }
-  .strip-text { line-height: 1.25; }
-  .strip-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: .95rem;
-    color: var(--white);
-  }
-  .strip-desc {
-    font-size: .75rem;
-    color: var(--muted);
-  }
+    .hero-before img,
+    .hero-after img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      filter: brightness(0.45);
+    }
 
-  /* ─── HOW IT WORKS ────────────────────────────────────────────── */
-  .section {
-    padding-block: 72px;
-  }
-  .section-inner {
-    max-width: 1060px;
-    margin: 0 auto;
-    padding-left: max(24px, env(safe-area-inset-left, 0px));
-    padding-right: max(24px, env(safe-area-inset-right, 0px));
-  }
-  .section-head {
-    text-align: center;
-    margin-bottom: 52px;
-  }
-  .section-kicker {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: .78rem;
-    font-weight: 700;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 12px;
-  }
-  .section-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
-    line-height: 1.05;
-    color: var(--white);
-    text-wrap: balance;
-  }
-  .section-title em { font-style: normal; color: var(--gold); }
+    .hero-label {
+      position: absolute;
+      top: 16px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      padding: 5px 12px;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+    }
 
-  /* steps */
-  .steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-  }
-  .step {
-    background: var(--card-bg);
-    padding: 36px 28px;
-    position: relative;
-  }
-  .step:first-child { border-radius: 10px 0 0 10px; }
-  .step:last-child { border-radius: 0 10px 10px 0; }
-  .step-num {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 4.5rem;
-    font-weight: 900;
-    line-height: 1;
-    color: rgba(196,162,74,.12);
-    margin-bottom: -12px;
-  }
-  .step-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 800;
-    font-size: 1.3rem;
-    color: var(--white);
-    margin-bottom: 10px;
-  }
-  .step-desc {
-    font-size: .9rem;
-    color: var(--muted);
-    line-height: 1.6;
-  }
-  .step-line {
-    position: absolute;
-    top: 36px;
-    right: -1px;
-    width: 2px;
-    height: 60px;
-    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
-  }
-  .step:last-child .step-line { display: none; }
+    .hero-before .hero-label { left: 16px; }
+    .hero-after .hero-label  { right: 16px; }
 
-  /* ─── WHY BARBERS ─────────────────────────────────────────────── */
-  .why-section {
-    background: var(--teal);
-    padding-block: 72px;
-  }
-  .why-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    align-items: center;
-  }
-  .why-copy .section-head {
-    text-align: left;
-    margin-bottom: 28px;
-  }
-  .why-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    margin-bottom: 36px;
-  }
-  .why-item {
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-  }
-  .why-icon {
-    flex-shrink: 0;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: rgba(196,162,74,.15);
-    border: 1.5px solid rgba(196,162,74,.35);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--gold);
-    margin-top: 2px;
-  }
-  .why-text { line-height: 1.5; }
-  .why-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    color: var(--white);
-    margin-bottom: 2px;
-  }
-  .why-desc { font-size: .875rem; color: var(--muted); }
+    .hero-divider {
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 50%;
+      width: 3px;
+      background: linear-gradient(to bottom, transparent, var(--cyan), transparent);
+      transform: translateX(-50%);
+      z-index: 2;
+    }
 
-  .referral-card {
-    background: var(--navy);
-    border: 1px solid rgba(196,162,74,.25);
-    border-radius: 12px;
-    padding: 36px 32px;
-    text-align: center;
-  }
-  .referral-card .price-label { text-align: center; margin-bottom: 4px; }
-  .referral-big {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 3rem;
-    font-weight: 900;
-    color: var(--gold);
-    margin-bottom: 8px;
-  }
-  .referral-text {
-    font-size: .9rem;
-    color: var(--muted);
-    max-width: 28ch;
-    margin: 0 auto 24px;
-    line-height: 1.6;
-  }
-  .referral-divider {
-    height: 1px;
-    background: rgba(196,162,74,.15);
-    margin-bottom: 20px;
-  }
-  .referral-qr-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-  }
-  .qr-box {
-    background: var(--white);
-    border-radius: 8px;
-    padding: 8px;
-    width: 90px;
-    height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .qr-box svg { display: block; }
-  .qr-label {
-    text-align: left;
-    font-size: .88rem;
-    color: var(--muted);
-    line-height: 1.5;
-    max-width: 20ch;
-  }
-  .qr-label strong { color: var(--white); font-size: 1rem; display: block; margin-bottom: 2px; }
+    .hero-divider-arrow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      background: var(--cyan);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+      color: var(--dark);
+      font-size: 14px;
+      font-weight: 900;
+      box-shadow: 0 0 20px rgba(10,232,240,0.6);
+    }
 
-  /* ─── TRUST BAR ───────────────────────────────────────────────── */
-  .trust-section {
-    padding-block: 56px;
-    text-align: center;
-  }
-  .trust-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    margin-top: 40px;
-  }
-  .trust-item {
-    padding: 28px 16px;
-    background: var(--card-bg);
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,.06);
-  }
-  .trust-number {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 2.8rem;
-    font-weight: 900;
-    color: var(--gold);
-    line-height: 1;
-    margin-bottom: 4px;
-    font-variant-numeric: tabular-nums;
-  }
-  .trust-label {
-    font-size: .82rem;
-    color: var(--muted);
-    line-height: 1.4;
-  }
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      color: var(--white);
+      padding: 20px;
+      max-width: 700px;
+    }
 
-  /* ─── CTA FOOTER ──────────────────────────────────────────────── */
-  .cta-section {
-    background: var(--teal2);
-    padding-block: 72px;
-    text-align: center;
-    border-top: 1px solid rgba(196,162,74,.2);
-  }
-  .cta-headline {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
-    font-weight: 900;
-    color: var(--white);
-    text-wrap: balance;
-    margin-bottom: 12px;
-  }
-  .cta-headline em { font-style: normal; color: var(--gold); }
-  .cta-sub {
-    font-size: 1rem;
-    color: var(--muted);
-    max-width: 48ch;
-    margin: 0 auto 10px;
-  }
-  .phone-display {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--gold2);
-    letter-spacing: .04em;
-    margin-bottom: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
-  .cta-buttons {
-    display: flex;
-    gap: 14px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 28px;
-  }
-  .cta-buttons .btn-primary { flex: 0 1 240px; }
-  .cta-buttons .btn-ghost  { flex: 0 1 200px; }
-  .disclaimer {
-    font-size: .75rem;
-    color: rgba(143, 168, 181, .6);
-    max-width: 56ch;
-    margin: 0 auto;
-    line-height: 1.6;
-  }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(10,232,240,0.15);
+      border: 1px solid rgba(10,232,240,0.5);
+      color: var(--cyan);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+    }
 
-  /* ─── SITE FOOTER ─────────────────────────────────────────────── */
-  .site-footer {
-    background: var(--navy);
-    border-top: 1px solid rgba(255,255,255,.07);
-    padding-block: 28px;
-    text-align: center;
-    font-size: .8rem;
-    color: var(--muted);
-  }
-  .site-footer a { color: var(--gold); text-decoration: none; }
+    .hero-title {
+      font-size: clamp(38px, 8vw, 72px);
+      font-weight: 900;
+      line-height: 1.05;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
 
-  /* ─── RESPONSIVE ──────────────────────────────────────────────── */
-  @media (max-width: 760px) {
-    .hero { grid-template-columns: 1fr; }
-    .hero-img { min-height: 280px; }
-    .hero-img::after { background: linear-gradient(0deg, var(--bg) 0%, transparent 35%); }
-    .hero-copy { padding: 36px 20px 40px; }
-    .strip-inner { flex-direction: column; gap: 0; }
-    .strip-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.1); width: 100%; padding: 14px 20px; }
-    .strip-item:last-child { border-bottom: none; }
-    .steps { grid-template-columns: 1fr; gap: 2px; }
-    .step:first-child { border-radius: 10px 10px 0 0; }
-    .step:last-child  { border-radius: 0 0 10px 10px; }
-    .step-line { display: none; }
-    .why-grid { grid-template-columns: 1fr; gap: 32px; }
-    .trust-grid { grid-template-columns: repeat(2, 1fr); }
-    .nav-wa span { display: none; }
-  }
-  @media (max-width: 420px) {
-    .trust-grid { grid-template-columns: 1fr 1fr; }
-    .referral-qr-row { flex-direction: column; }
-    .qr-label { text-align: center; }
-  }
-</style>
+    .hero-title span {
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
 
-<!-- NAV -->
-<nav class="nav">
-  <div>
-    <div class="nav-logo">IHTC <span>Tijuana</span></div>
-    <div class="nav-sub">Injerto Capilar</div>
-  </div>
-  <a class="nav-wa" href="https://wa.me/526646165346" target="_blank" rel="noopener">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    <span>WhatsApp</span>
-  </a>
-</nav>
+    .hero-subtitle {
+      font-size: clamp(14px, 3vw, 18px);
+      opacity: 0.85;
+      margin-bottom: 10px;
+    }
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-img">
-    <canvas id="heroCanvas" aria-label="Barber cutting hair"></canvas>
-    <script>
-    (function(){
-      var c=document.getElementById('heroCanvas'),ctx=c.getContext('2d');
-      function draw(){
-        var w=c.offsetWidth,h=c.offsetHeight;
-        c.width=w;c.height=h;
-        // deep teal background
-        var bg=ctx.createLinearGradient(0,0,0,h);
-        bg.addColorStop(0,'#0a2535');
-        bg.addColorStop(1,'#163848');
-        ctx.fillStyle=bg;ctx.fillRect(0,0,w,h);
-        // subtle bokeh circles
-        [[.2,.3,80,'rgba(196,162,74,.06)'],[.7,.5,120,'rgba(30,77,99,.4)'],[.5,.2,60,'rgba(196,162,74,.04)'],[.1,.7,90,'rgba(30,77,99,.3)']].forEach(function(b){
-          var g=ctx.createRadialGradient(b[0]*w,b[1]*h,0,b[0]*w,b[1]*h,b[2]);
-          g.addColorStop(0,b[3]);g.addColorStop(1,'transparent');
-          ctx.fillStyle=g;ctx.fillRect(0,0,w,h);
-        });
-        // scissors silhouette
-        ctx.save();ctx.translate(w*.5,h*.42);ctx.scale(h*.003,h*.003);
-        ctx.strokeStyle='rgba(196,162,74,.18)';ctx.lineWidth=8;ctx.lineCap='round';
-        ctx.beginPath();ctx.moveTo(-30,-80);ctx.lineTo(30,80);ctx.stroke();
-        ctx.beginPath();ctx.moveTo(30,-80);ctx.lineTo(-30,80);ctx.stroke();
-        ctx.beginPath();ctx.arc(-25,88,22,0,Math.PI*2);ctx.stroke();
-        ctx.beginPath();ctx.arc(25,88,22,0,Math.PI*2);ctx.stroke();
-        ctx.restore();
-        // text
-        ctx.fillStyle='rgba(196,162,74,.22)';
-        ctx.font='bold '+(h*.08)+'px Barlow Condensed,sans-serif';
-        ctx.textAlign='center';
-        ctx.fillText('IHTC',w*.5,h*.5);
-      }
-      draw();
-      new ResizeObserver(draw).observe(c);
-    })();
-    </script>
-    <div class="stamp">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3l6 6M6 3c-1.5 0-3 1-3 3s1.5 3 3 3 3-1 3-3M12 9l6 6M12 9c-1.5 1.5-1.5 4.5 0 6s4.5 1.5 6 0"/><circle cx="9" cy="6" r="1" fill="currentColor"/><circle cx="15" cy="12" r="1" fill="currentColor"/></svg>
-      Good Hair · Better Days
-    </div>
-  </div>
-  <div class="hero-copy">
-    <div class="hero-eyebrow">For barbershop clients</div>
-    <h1 class="hero-headline">What if your next haircut started with <em>more hair?</em></h1>
-    <p class="hero-sub">Hair transplant in Tijuana — 30 minutes from San Diego, 60–80% less than US prices, and results that last a lifetime.</p>
+    .hero-promo-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 32px;
+      letter-spacing: 0.5px;
+    }
 
-    <div class="price-card">
-      <div class="price-label">Barbers Exclusive Promo</div>
-      <div class="price-amount"><sup>$</sup>2,990 <small style="font-size:1rem;font-weight:600;color:var(--muted)">USD</small></div>
-      <div class="price-note">Up to maximum extraction · All-inclusive</div>
-      <div class="price-vs">US clinics charge <strong>$8,000–$25,000</strong> for the same procedure.</div>
-    </div>
+    .hero-ctas {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: center;
+    }
 
-    <div class="cta-row">
-      <a class="btn-primary" href="https://tijuanahair.com/barbers" target="_blank" rel="noopener">
-        Book Free Evaluation
-      </a>
-      <a class="btn-ghost" href="https://wa.me/526646165346" target="_blank" rel="noopener">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        664 616 53 46
-      </a>
-    </div>
-  </div>
-</section>
+    @media (min-width: 480px) {
+      .hero-ctas { flex-direction: row; justify-content: center; }
+    }
 
-<!-- STRIP -->
-<div class="strip">
-  <div class="strip-inner">
-    <div class="strip-item">
-      <div class="strip-icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--green);
+      color: var(--white);
+      padding: 16px 28px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 16px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      white-space: nowrap;
+    }
+
+    .btn-wa:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(37,211,102,0.5);
+    }
+
+    .btn-call {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255,255,255,0.4);
+      color: var(--white);
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 16px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .btn-call:hover {
+      background: rgba(255,255,255,0.22);
+      transform: translateY(-2px);
+    }
+
+    .hero-trust {
+      margin-top: 28px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .hero-trust-item i { color: var(--cyan); }
+
+    /* ── SECTION HEADER ── */
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      background: linear-gradient(135deg, rgba(0,107,255,0.1), rgba(10,232,240,0.1));
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(26px, 5vw, 42px);
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.2;
+    }
+
+    .section-header p {
+      margin-top: 12px;
+      color: var(--gray);
+      font-size: 16px;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── GALLERY ── */
+    .gallery-section {
+      padding: 80px 20px;
+      background: var(--light);
+    }
+
+    .gallery-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 600px) {
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (min-width: 900px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    }
+
+    .gallery-card {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: #e5e7eb;
+    }
+
+    .gallery-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .gallery-card-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+      color: var(--white);
+      padding: 28px 16px 14px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* Gallery CTA mid-section */
+    .gallery-cta-mid {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    /* ── SOCIAL PROOF STRIP ── */
+    .proof-strip {
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      padding: 28px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      justify-content: center;
+    }
+
+    .proof-item {
+      flex: 1;
+      min-width: 150px;
+      text-align: center;
+      color: var(--white);
+      padding: 12px 20px;
+      border-right: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .proof-item:last-child { border-right: none; }
+
+    .proof-num {
+      font-size: 32px;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .proof-label {
+      font-size: 12px;
+      opacity: 0.85;
+      font-weight: 600;
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-section {
+      padding: 80px 20px;
+      background: var(--white);
+    }
+
+    .testimonials-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 600px) {
+      .testimonials-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (min-width: 900px) {
+      .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .testimonial-card {
+      background: var(--light);
+      border-radius: var(--radius);
+      padding: 28px;
+      border: 1px solid #e2e8f0;
+      transition: all 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      transform: translateY(-4px);
+    }
+
+    .testimonial-stars {
+      color: #fbbf24;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .testimonial-text {
+      color: #374151;
+      font-size: 15px;
+      line-height: 1.75;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testimonial-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 14px;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+
+    .testimonial-name {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--dark);
+    }
+
+    .testimonial-location {
+      font-size: 12px;
+      color: var(--gray);
+    }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      padding: 80px 20px;
+      background: var(--dark);
+      text-align: center;
+      color: var(--white);
+    }
+
+    .final-cta h2 {
+      font-size: clamp(28px, 5vw, 46px);
+      font-weight: 900;
+      margin-bottom: 12px;
+      line-height: 1.15;
+    }
+
+    .final-cta h2 span {
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .final-cta p {
+      font-size: 16px;
+      opacity: 0.7;
+      max-width: 500px;
+      margin: 0 auto 36px;
+    }
+
+    .final-cta-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: center;
+    }
+
+    @media (min-width: 480px) {
+      .final-cta-btns { flex-direction: row; justify-content: center; }
+    }
+
+    .btn-wa-large {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--green);
+      color: var(--white);
+      padding: 18px 36px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 18px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.4);
+      white-space: nowrap;
+    }
+
+    .btn-wa-large:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 32px rgba(37,211,102,0.55);
+    }
+
+    .btn-call-large {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: transparent;
+      border: 2px solid rgba(255,255,255,0.4);
+      color: var(--white);
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 17px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .btn-call-large:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      transform: translateY(-3px);
+    }
+
+    .final-cta-note {
+      margin-top: 20px;
+      font-size: 13px;
+      opacity: 0.5;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #070b14;
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    footer img {
+      height: 40px;
+      margin-bottom: 12px;
+      filter: brightness(0) invert(1) opacity(0.7);
+    }
+
+    footer p {
+      color: rgba(255,255,255,0.4);
+      font-size: 13px;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--cyan); }
+
+    /* ── STICKY WHATSAPP (mobile) ── */
+    .sticky-wa {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      animation: pulse-wa 2s infinite;
+    }
+
+    .sticky-wa:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 28px rgba(37,211,102,0.65);
+    }
+
+    .sticky-wa i { color: var(--white); font-size: 28px; }
+
+    @keyframes pulse-wa {
+      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.5); }
+      50% { box-shadow: 0 4px 28px rgba(37,211,102,0.75); }
+    }
+
+    @media (min-width: 768px) {
+      .sticky-wa { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-split">
+      <div class="hero-before">
+        <img src="/images/result1.jpg" alt="Before hair transplant" loading="eager">
+        <div class="hero-label">Before</div>
       </div>
-      <div class="strip-text">
-        <div class="strip-title">English-Speaking Team</div>
-        <div class="strip-desc">Surgeon, nurses, and staff</div>
+      <div class="hero-after">
+        <img src="/images/result2.jpg" alt="After hair transplant" loading="eager">
+        <div class="hero-label">After</div>
       </div>
     </div>
-    <div class="strip-item">
-      <div class="strip-icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
-      </div>
-      <div class="strip-text">
-        <div class="strip-title">30 min from San Diego</div>
-        <div class="strip-desc">Just across the border</div>
-      </div>
-    </div>
-    <div class="strip-item">
-      <div class="strip-icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-      </div>
-      <div class="strip-text">
-        <div class="strip-title">FUE + DHI Technique</div>
-        <div class="strip-desc">No linear scar</div>
-      </div>
-    </div>
-    <div class="strip-item">
-      <div class="strip-icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      </div>
-      <div class="strip-text">
-        <div class="strip-title">Licensed Surgeon</div>
-        <div class="strip-desc">Cédula Profesional verified</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- HOW IT WORKS -->
-<section class="section">
-  <div class="section-inner">
-    <div class="section-head">
-      <div class="section-kicker">The Process</div>
-      <h2 class="section-title">Simple from your chair<br>to <em>our chair</em></h2>
+    <div class="hero-divider">
+      <div class="hero-divider-arrow">⇄</div>
     </div>
 
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">01</div>
-        <div class="step-title">Free Evaluation</div>
-        <div class="step-desc">Book a no-commitment consultation — online or in person. We assess your hair loss stage and design your new hairline at no cost.</div>
-        <div class="step-line"></div>
-      </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <div class="step-title">Procedure Day</div>
-        <div class="step-desc">Drive 30 minutes from San Diego. Most patients return home the same day. The FUE+DHI procedure takes 6–8 hours under local anesthesia.</div>
-        <div class="step-line"></div>
-      </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <div class="step-title">Results</div>
-        <div class="step-desc">New hair begins growing at month 3–6. Full permanent density by month 12–18. Your barber will finally have more to work with.</div>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="hero-content">
+      <div class="hero-badge">Exclusive Barbershop Offer</div>
+      <h1 class="hero-title">
+        Your hair <br><span>can come back</span>
+      </h1>
+      <p class="hero-subtitle">Permanent hair transplant — maximum extraction</p>
+      <p class="hero-promo-label">Starting at only <strong style="color:#0AE8F0;font-size:1.3em">$2,990 USD</strong></p>
 
-<!-- WHY BARBERS -->
-<section class="why-section">
-  <div class="section-inner">
-    <div class="why-grid">
-      <div class="why-copy">
-        <div class="section-head">
-          <div class="section-kicker">For Barbers &amp; Their Clients</div>
-          <h2 class="section-title">A referral program built for the chair</h2>
-        </div>
-        <ul class="why-list">
-          <li class="why-item">
-            <div class="why-icon">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <div class="why-text">
-              <div class="why-label">Exclusive $2,990 price</div>
-              <div class="why-desc">Only available through barber partners — up to maximum extraction, all-inclusive.</div>
-            </div>
-          </li>
-          <li class="why-item">
-            <div class="why-icon">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <div class="why-text">
-              <div class="why-label">Free medical evaluation</div>
-              <div class="why-desc">No cost, no commitment. Clients come in, we assess — simple as that.</div>
-            </div>
-          </li>
-          <li class="why-item">
-            <div class="why-icon">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <div class="why-text">
-              <div class="why-label">Same-day return</div>
-              <div class="why-desc">Most clients are back in San Diego by evening. No hotels, no flights, no days off.</div>
-            </div>
-          </li>
-          <li class="why-item">
-            <div class="why-icon">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <div class="why-text">
-              <div class="why-label">12-month follow-up included</div>
-              <div class="why-desc">Free post-op care and direct WhatsApp access to the care team through full recovery.</div>
-            </div>
-          </li>
-        </ul>
-        <a class="btn-primary" href="https://tijuanahair.com/barbers" target="_blank" rel="noopener" style="display:inline-flex;max-width:260px;">
-          Partner With Us
+      <div class="hero-ctas">
+        <a href="https://wa.me/526646165346?text=Hi!%20I%20saw%20the%20%242%2C990%20promo%20and%20want%20to%20know%20more"
+           class="btn-wa"
+           onclick="fbq('track','Contact')">
+          <i class="fab fa-whatsapp"></i> WhatsApp Us
+        </a>
+        <a href="tel:+526646423088" class="btn-call"
+           onclick="fbq('track','Contact')">
+          <i class="fas fa-phone"></i> Call Now
         </a>
       </div>
 
-      <div class="referral-card">
-        <div class="price-label">Share with your clients</div>
-        <div class="referral-big">$2,990</div>
-        <div class="referral-text">Hair transplant — up to maximum extraction. Medical evaluation required. Candidacy and plan subject to individual assessment.</div>
-        <div class="referral-divider"></div>
-        <div class="referral-qr-row">
-          <div class="qr-box">
-            <!-- Simple QR placeholder SVG -->
-            <svg width="70" height="70" viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg">
-              <rect width="70" height="70" fill="#fff"/>
-              <g fill="#000">
-                <!-- Top-left finder -->
-                <rect x="4" y="4" width="20" height="20" rx="2"/>
-                <rect x="7" y="7" width="14" height="14" rx="1" fill="#fff"/>
-                <rect x="10" y="10" width="8" height="8"/>
-                <!-- Top-right finder -->
-                <rect x="46" y="4" width="20" height="20" rx="2"/>
-                <rect x="49" y="7" width="14" height="14" rx="1" fill="#fff"/>
-                <rect x="52" y="10" width="8" height="8"/>
-                <!-- Bottom-left finder -->
-                <rect x="4" y="46" width="20" height="20" rx="2"/>
-                <rect x="7" y="49" width="14" height="14" rx="1" fill="#fff"/>
-                <rect x="10" y="52" width="8" height="8"/>
-                <!-- Data modules (simplified) -->
-                <rect x="28" y="4" width="4" height="4"/><rect x="34" y="4" width="4" height="4"/>
-                <rect x="28" y="10" width="4" height="4"/><rect x="40" y="10" width="4" height="4"/>
-                <rect x="34" y="16" width="4" height="4"/>
-                <rect x="28" y="28" width="4" height="4"/><rect x="34" y="28" width="4" height="4"/><rect x="40" y="28" width="4" height="4"/>
-                <rect x="46" y="28" width="4" height="4"/><rect x="52" y="28" width="4" height="4"/><rect x="58" y="28" width="4" height="4"/>
-                <rect x="28" y="34" width="4" height="4"/><rect x="40" y="34" width="4" height="4"/><rect x="52" y="34" width="4" height="4"/>
-                <rect x="28" y="40" width="4" height="4"/><rect x="34" y="40" width="4" height="4"/><rect x="46" y="40" width="4" height="4"/><rect x="58" y="40" width="4" height="4"/>
-                <rect x="28" y="46" width="4" height="4"/><rect x="34" y="46" width="4" height="4"/><rect x="52" y="46" width="4" height="4"/>
-                <rect x="28" y="52" width="4" height="4"/><rect x="46" y="52" width="4" height="4"/><rect x="58" y="52" width="4" height="4"/>
-                <rect x="34" y="58" width="4" height="4"/><rect x="40" y="58" width="4" height="4"/><rect x="52" y="58" width="4" height="4"/>
-                <rect x="28" y="58" width="4" height="4"/>
-              </g>
-            </svg>
-          </div>
-          <div class="qr-label">
-            <strong>Scan or tap to book</strong>
-            TijuanaHair.com/barbers<br>
-            <span style="color:var(--gold);font-size:.8rem;">WhatsApp: 664 616 53 46</span>
+      <div class="hero-trust">
+        <span class="hero-trust-item"><i class="fas fa-shield-alt"></i> FDA-Approved Techniques</span>
+        <span class="hero-trust-item"><i class="fas fa-check-circle"></i> Permanent Results</span>
+        <span class="hero-trust-item"><i class="fas fa-star"></i> 500+ Patients</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROOF STRIP ── -->
+  <div class="proof-strip">
+    <div class="proof-item">
+      <div class="proof-num">$2,990</div>
+      <div class="proof-label">Starting Price USD</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">500+</div>
+      <div class="proof-label">Successful Cases</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">FUE &amp; DHI</div>
+      <div class="proof-label">Advanced Techniques</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">5★</div>
+      <div class="proof-label">Patient Reviews</div>
+    </div>
+  </div>
+
+  <!-- ── GALLERY ── -->
+  <section class="gallery-section">
+    <div class="section-header">
+      <div class="section-tag">Real Results</div>
+      <h2>Before &amp; After Gallery</h2>
+      <p>Every result is from a real IHTC Tijuana patient. Natural, permanent hair — for life.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <img src="/images/result1.jpg" alt="Hair transplant before and after result 1" loading="lazy">
+        <div class="gallery-card-label">Patient Result · FUE Transplant</div>
+      </div>
+      <div class="gallery-card">
+        <img src="/images/result2.jpg" alt="Hair transplant before and after result 2" loading="lazy">
+        <div class="gallery-card-label">Patient Result · Natural Hairline</div>
+      </div>
+      <div class="gallery-card">
+        <img src="/images/result3.jpg" alt="Hair transplant before and after result 3" loading="lazy">
+        <div class="gallery-card-label">Patient Result · DHI Technique</div>
+      </div>
+      <div class="gallery-card">
+        <img src="/images/result4.jpg" alt="Hair transplant before and after result 4" loading="lazy">
+        <div class="gallery-card-label">Patient Result · Full Coverage</div>
+      </div>
+      <div class="gallery-card">
+        <img src="/images/mes-01.png" alt="Hair transplant progress month 1" loading="lazy">
+        <div class="gallery-card-label">Month 1 — Recovery begins</div>
+      </div>
+      <div class="gallery-card">
+        <img src="/images/mes-06.png" alt="Hair transplant progress month 6" loading="lazy">
+        <div class="gallery-card-label">Month 6 — Visible growth</div>
+      </div>
+      <div class="gallery-card">
+        <img src="/images/mes-12.png" alt="Hair transplant progress month 12" loading="lazy">
+        <div class="gallery-card-label">Month 12 — Full results</div>
+      </div>
+      <div class="gallery-card">
+        <img src="/images/mes-18.png" alt="Hair transplant progress month 18" loading="lazy">
+        <div class="gallery-card-label">Month 18 — Final result</div>
+      </div>
+    </div>
+
+    <div class="gallery-cta-mid">
+      <a href="https://wa.me/526646165346?text=Hi!%20I%20want%20to%20know%20more%20about%20the%20%242%2C990%20promo"
+         class="btn-wa"
+         onclick="fbq('track','InitiateCheckout')"
+         style="display:inline-flex;">
+        <i class="fab fa-whatsapp"></i> Claim This Price — WhatsApp Us
+      </a>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIALS ── -->
+  <section class="testimonials-section">
+    <div class="section-header">
+      <div class="section-tag">Patient Stories</div>
+      <h2>Real People. Real Results.</h2>
+      <p>Join hundreds of men who made the decision that changed everything.</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="testimonial-text">"Best decision I ever made! The team was incredibly professional. My hairline looks completely natural, and the cost was a fraction of what I would have paid in the US. Six months post-procedure and I couldn't be happier!"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">JM</div>
+          <div>
+            <div class="testimonial-name">James M.</div>
+            <div class="testimonial-location">San Diego, CA</div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- TRUST STATS -->
-<section class="trust-section section">
-  <div class="section-inner">
-    <div class="section-kicker">The Numbers</div>
-    <h2 class="section-title" style="margin-bottom:0">Thousands of US patients.<br><em>One decision.</em></h2>
-    <div class="trust-grid">
-      <div class="trust-item">
-        <div class="trust-number">$2,990</div>
-        <div class="trust-label">All-inclusive barbers promo price</div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="testimonial-text">"I was nervous about traveling to Mexico for the procedure, but from the first consultation to the final follow-up, everything was seamless. The results exceeded my expectations. I have my confidence back!"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">RG</div>
+          <div>
+            <div class="testimonial-name">Robert G.</div>
+            <div class="testimonial-location">Los Angeles, CA</div>
+          </div>
+        </div>
       </div>
-      <div class="trust-item">
-        <div class="trust-number">60–80%</div>
-        <div class="trust-label">Less than US clinic pricing</div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-number">30 min</div>
-        <div class="trust-label">From San Diego to our clinic</div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-number">5 yrs</div>
-        <div class="trust-label">Dr. Yáñez dedicated to FUE & DHI</div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- CTA FOOTER -->
-<section class="cta-section">
-  <div class="section-inner">
-    <h2 class="cta-headline">Your next cut.<br><em>More to work with.</em></h2>
-    <p class="cta-sub">Book a free, no-commitment evaluation — online or in person at our Zona Río clinic.</p>
-    <div class="phone-display">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      664 616 53 46
-    </div>
-    <div class="cta-buttons">
-      <a class="btn-primary" href="https://tijuanahair.com/barbers" target="_blank" rel="noopener">Book Free Evaluation</a>
-      <a class="btn-ghost" href="https://wa.me/526646165346" target="_blank" rel="noopener">WhatsApp Us</a>
-    </div>
-    <p class="disclaimer">Medical evaluation required. Candidacy and treatment plan subject to individual assessment. Procedure performed by licensed specialists at International Hair Transplant Clinic, Tijuana, B.C., Mexico.</p>
-  </div>
-</section>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="testimonial-text">"Outstanding experience! The clinic is modern and the staff speaks perfect English. My results are amazing — it looks so natural that even my close friends can't tell I had work done. Highly recommend!"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MA</div>
+          <div>
+            <div class="testimonial-name">Michael A.</div>
+            <div class="testimonial-location">Phoenix, AZ</div>
+          </div>
+        </div>
+      </div>
 
-<!-- SITE FOOTER -->
-<footer class="site-footer">
-  <div style="margin-bottom:6px;">
-    <a href="https://tijuanahair.com" target="_blank" rel="noopener">TijuanaHair.com</a>
-    &nbsp;·&nbsp; New City Medical Plaza, Paseo del Centenario 9580, Zona Río, Tijuana
-  </div>
-  <div>© 2026 International Hair Transplant Clinic · +52 664 642 3088</div>
-</footer>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="testimonial-text">"After years of feeling self-conscious about my thinning hair, I finally took the plunge. The FUE technique was virtually painless, and recovery was quick. Nine months later, my hair is thick and full. This clinic changed my life!"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">DL</div>
+          <div>
+            <div class="testimonial-name">David L.</div>
+            <div class="testimonial-location">Orange County, CA</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="testimonial-text">"I researched hair transplant clinics for months before choosing IHTC in Tijuana. The quality of care, expertise, and affordable pricing made it an easy choice. The results speak for themselves — I look 10 years younger!"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">TC</div>
+          <div>
+            <div class="testimonial-name">Thomas C.</div>
+            <div class="testimonial-location">Las Vegas, NV</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Extra card: the offer -->
+      <div class="testimonial-card" style="background:linear-gradient(135deg,#006BFF,#0AE8F0);border:none;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:12px;">
+        <div style="font-size:42px;font-weight:900;line-height:1;">$2,990</div>
+        <div style="font-size:14px;opacity:0.9;font-weight:600;">Maximum Extraction · Limited Time</div>
+        <a href="https://wa.me/526646165346?text=Hi!%20I%20want%20to%20know%20more%20about%20the%20%242%2C990%20promo"
+           onclick="fbq('track','Contact')"
+           style="margin-top:8px;display:inline-flex;align-items:center;gap:8px;background:#fff;color:#006BFF;padding:12px 24px;border-radius:30px;font-weight:800;font-size:15px;text-decoration:none;">
+          <i class="fab fa-whatsapp" style="color:#25D366;"></i> Get This Price
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FINAL CTA ── -->
+  <section class="final-cta">
+    <h2>Your barber sees it.<br><span>Now do something about it.</span></h2>
+    <p>One procedure. Permanent results. Only $2,990 USD — maximum extraction.</p>
+
+    <div class="final-cta-btns">
+      <a href="https://wa.me/526646165346?text=Hi!%20I%20saw%20the%20%242%2C990%20promo%20and%20want%20to%20know%20more"
+         class="btn-wa-large"
+         onclick="fbq('track','Contact')">
+        <i class="fab fa-whatsapp"></i> WhatsApp Us
+      </a>
+      <a href="tel:+526646423088" class="btn-call-large"
+         onclick="fbq('track','Contact')">
+        <i class="fas fa-phone"></i> +52 664 642 3088
+      </a>
+    </div>
+    <p class="final-cta-note">Free consultation · No commitment · English spoken</p>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <img src="/images/logo.png" alt="IHTC Tijuana logo">
+    <p>International Hair Transplant Clinic &nbsp;·&nbsp; <a href="https://tijuanahair.com">tijuanahair.com</a></p>
+    <p style="margin-top:6px;">© 2025 IHTC. All rights reserved.</p>
+  </footer>
+
+  <!-- ── STICKY WHATSAPP ── -->
+  <a href="https://wa.me/526646165346?text=Hi!%20I%20saw%20the%20%242%2C990%20promo%20and%20want%20to%20know%20more"
+     class="sticky-wa"
+     aria-label="Contact us on WhatsApp"
+     onclick="fbq('track','Contact')">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+</body>
+</html>
